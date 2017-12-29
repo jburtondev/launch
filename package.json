@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "description": "A skeleton project for simple static web sites.",
   "author": "Mohamed Kherroubi <mkherroubi93@gmail.com>",
-  "contributors": [{
-    "name": "",
-    "email": ""
-  }],
-  "keywords": ["HTML", "CSS", "JavaScript", "Foundation", "jQuery"],
+  "contributors": [
+    {
+      "name": "",
+      "email": ""
+    }
+  ],
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Foundation",
+    "jQuery"
+  ],
   "repository": {
     "type": "git",
     "url": ""
