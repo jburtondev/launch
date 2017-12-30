@@ -1,6 +1,6 @@
 // JSHint Configuration File.
 // Author: Mohamed Kherroubi.
-// Last Modified: 22/12/2017.
+// Last Modified: 30/12/2017.
 // List of rules covered by this configuration can be found at http://jshint.com/docs/options/.
 {
     "maxerr": 50,

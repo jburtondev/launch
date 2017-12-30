@@ -1,3 +1,8 @@
+# SCSSLint Configuration File.
+# Author: Mohamed Kherroubi.
+# Last Modified: 30/12/2017.
+# List of rules covered by this configuration can be found at https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md.
+
 severity: warning
 
 linters:

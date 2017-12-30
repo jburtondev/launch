@@ -1,7 +1,7 @@
 // CSSComb Configuration File.
 // Author: Mohamed Kherroubi.
-// Last Modified: 22/12/2017.
-// Extended from https://github.com/csscomb/csscomb.js/blob/dev/config/zen.json.
+// Last Modified: 30/12/2017.
+// Amended and extended from that file that be found at https://github.com/csscomb/csscomb.js/blob/dev/config/zen.json.
 {
     "always-semicolon": true,
     "block-indent": "    ",
