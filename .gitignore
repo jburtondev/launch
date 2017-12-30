@@ -52,3 +52,6 @@ Temporary Items
 logs
 node_modules/
 npm-debug.log*
+
+### Custom ###
+.zip
