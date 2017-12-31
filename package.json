@@ -29,6 +29,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^7.0.0",
+    "gulp-bump": "^3.0.0",
     "gulp-clean": "^0.3.2",
     "gulp-cssmin": "^0.2.0",
     "gulp-eslint": "^4.0.0",
