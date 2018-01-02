@@ -3,6 +3,7 @@
 
 var autoprefixer = require("gulp-autoprefixer"),
     babel = require("gulp-babel"),
+    browserSync = require("browser-sync").create(),
     bump = require("gulp-bump"),
     clean = require("gulp-clean"),
     cssmin = require("gulp-cssmin"),
@@ -29,7 +30,7 @@ gulp.task("copy", function () {
     gulp.src("src/fonts/**/**").pipe(gulp.dest("dist/fonts/"));
     gulp.src("src/images/**/**").pipe(gulp.dest("dist/images/"));
     gulp.src("src/js/**/**").pipe(gulp.dest("dist/js/"));
-    return gulp.src("**.html").pipe(gulp.dest("dist/"));
+    return gulp.src("src/**/**.html").pipe(gulp.dest("dist/"));
 });
 
 gulp.task("sass", function () {
@@ -44,6 +45,14 @@ gulp.task("sass", function () {
         }))
         .pipe(removeEmptyLines())
         .pipe(gulp.dest("dist/css"));
+});
+
+gulp.task("serve", function () {
+    browserSync.init({
+        server: {
+            baseDir: "./dist/"
+        }
+    });
 });
 
 gulp.task("transpile", function () {
@@ -95,7 +104,7 @@ gulp.task("archive", function () {
 });
 
 gulp.task("build", function () {
-    runSequence("clean", "sass", "copy");
+    runSequence("clean", "sass", "copy", "serve");
 });
 
 gulp.task("release", function () {
