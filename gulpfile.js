@@ -50,6 +50,8 @@ gulp.task("sass", function () {
 
 gulp.task("serve", function () {
     browserSync.init({
+        browser: "google chrome canary",
+        injectChanges: true,
         server: {
             baseDir: "./dist/"
         }
