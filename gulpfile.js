@@ -11,6 +11,7 @@ var autoprefixer = require("gulp-autoprefixer"),
     gulp = require("gulp"),
     gutil = require("gulp-util"),
     npmPackage = require("./package.json"),
+    reload = browserSync.reload,
     removeEmptyLines = require("gulp-remove-empty-lines"),
     runSequence = require("run-sequence"),
     sass = require("gulp-sass"),
@@ -104,13 +105,14 @@ gulp.task("archive", function () {
 });
 
 gulp.task("build", function () {
-    runSequence("clean", "sass", "copy", "serve");
+    runSequence("clean", "sass", "copy");
 });
 
 gulp.task("release", function () {
     runSequence("clean", "sass", "copy", "transpile", "cssmin", "jsmin", "archive");
 });
 
-gulp.task("default", ["build"], function () {
-    gulp.watch(["gulpfile.js", "index.html", "src/**/**"], ["build", "patch"]);
+gulp.task("default", function () {
+    runSequence("build", "serve");
+    gulp.watch(["gulpfile.js", "src/**/**"], ["build", "patch", reload]);
 });
