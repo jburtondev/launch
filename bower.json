@@ -1,7 +1,7 @@
 {
   "name": "launch",
   "authors": ["Mohamed Kherroubi <mkherroubi93@gmail.com>"],
-  "description": "A skeleton project for simple static web sites.",
+  "description": "A simple boilerplate project to help reduce the set up time of new static web projects.",
   "keywords": ["HTML", "CSS", "JavaScript", "Foundation", "jQuery"],
   "main": "index.html",
   "private": true,
