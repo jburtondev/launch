@@ -49,6 +49,7 @@ gulp
 ## 📚 Acknowledgements
 
 Comprehensive system fonts: https://css-tricks.com/snippets/css/system-font-stack/ by [@geoffreygraham](https://twitter.com/geoffreygraham).
+The MIT License: https://opensource.org/licenses/MIT.
 
 ## ⚖️ License (MIT)
 
