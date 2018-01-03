@@ -9,7 +9,7 @@
 
 Launch is a simple boilerplate project to help reduce the set up time of new static web projects.
 
-## Get Started 💾
+## 💾 Get Started
 
 1. Create a new directory for your project and navigate into it.
 
@@ -38,7 +38,7 @@ gulp
 
 5. Get started! Make changes to the `index.html` file and the browser will refresh automatically once the application has been rebuilt.
 
-## Contributing 🎁
+## 🎁 Contributing
 
 1. Fork this repository.
 2. Create your feature branch: `git checkout -b my-new-feature`
@@ -46,11 +46,11 @@ gulp
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request!
 
-## Acknowledgements 📚
+## 📚 Acknowledgements
 
 Comprehensive system fonts: https://css-tricks.com/snippets/css/system-font-stack/ by [@geoffreygraham](https://twitter.com/geoffreygraham).
 
-## License (MIT) ⚖️
+## ⚖️ License (MIT)
 
 Copyright 2018 Mohamed Kherroubi.
 
