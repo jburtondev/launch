@@ -5,7 +5,9 @@
 [![bower](https://img.shields.io/badge/bower-1.8.2-yellow.svg)](https://bower.io/)
 [![gulp](https://img.shields.io/badge/gulp-3.9.1-red.svg)](https://gulpjs.com/)
 
-## Introduction
+![Launch](https://media.giphy.com/media/kjjRGpezebjaw/giphy.gif)
+
+# Introduction
 
 Launch is a simple boilerplate project to help reduce the set up time of new static web projects.
 
