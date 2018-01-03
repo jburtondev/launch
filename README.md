@@ -21,9 +21,8 @@ cd my-project
 2. Clone the Launch repository into the current folder.
 
 ```
-git clone git@github.com:user/my-project.git .
+git clone git@github.com:mkherroubi/launch.git .
 ```
-
 3. Install build and application dependencies.
 
 ```
