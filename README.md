@@ -9,7 +9,20 @@
 
 # Introduction
 
-Launch is a simple boilerplate project to help reduce the set up time of new static web projects.
+Launch is a simple boilerplate project to help reduce the set up time of new static web projects. It provides a simple base of which websites can be built upon. It uses various tools, web technologies and frameworks to accomplish this - they are as follows:
+
+- [Autoprefixer](https://autoprefixer.github.io/)
+- [Babel](https://babeljs.io/)
+- [Bower](https://bower.io/)
+- [BrowserSync](https://www.browsersync.io/)
+- CSS3
+- [Foundation](https://foundation.zurb.com/sites.html)
+- [Gulp.js](https://gulpjs.com/)
+- HTML5
+- JavaScript
+- [jQuery](https://jquery.com/)
+- [NPM](https://www.npmjs.com/)
+- [SCSS](http://sass-lang.com/)
 
 ## 💾 Get Started
 
