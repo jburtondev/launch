@@ -1,6 +1,6 @@
 # Launch 🚀
 
-[![node](https://img.shields.io/badge/node-v9.2.1-green.svg)](https://nodejs.org/en/)
+[![node](https://img.shields.io/badge/node-v9.4.0-green.svg)](https://nodejs.org/en/)
 [![npm](https://img.shields.io/badge/npm-v5.6.0-blue.svg)](https://www.npmjs.com/)
 [![bower](https://img.shields.io/badge/bower-1.8.2-yellow.svg)](https://bower.io/)
 [![gulp](https://img.shields.io/badge/gulp-3.9.1-red.svg)](https://gulpjs.com/)
