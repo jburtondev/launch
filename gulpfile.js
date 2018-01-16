@@ -48,16 +48,6 @@ gulp.task("sass", function () {
         .pipe(gulp.dest("dist/css"));
 });
 
-gulp.task("serve", function () {
-    browserSync.init({
-        browser: "google chrome canary",
-        injectChanges: true,
-        server: {
-            baseDir: "./dist/"
-        }
-    });
-});
-
 gulp.task("transpile", function () {
     return gulp.src(["dist/js/**.js", "!dist/js/vendor/**.js"])
         .pipe(babel({
@@ -106,15 +96,24 @@ gulp.task("archive", function () {
     return gulp.src("dist/**/**").pipe(zip(npmPackage.name + ".[" + timestamp + "].zip")).pipe(gulp.dest("."));
 });
 
-gulp.task("build", function () {
-    runSequence("clean", "sass", "copy");
+gulp.task("watch", function () {
+    browserSync.init({
+        browser: "google chrome canary",
+        server: {
+            baseDir: "dist/"
+        }
+    });
+    gulp.watch(["src/**/**.html", "src/fonts/**/**", "src/images/**/**", "src/js/**/*.js"], ["copy", browserSync.reload]);
+});
+
+gulp.task("build", function (done) {
+    runSequence("clean", "sass", "copy", done);
 });
 
 gulp.task("release", function () {
     runSequence("clean", "sass", "copy", "transpile", "cssmin", "jsmin", "archive");
 });
 
-gulp.task("default", function () {
-    runSequence("build", "serve");
-    gulp.watch(["gulpfile.js", "src/**/**"], ["build", "patch", reload]);
+gulp.task("default", function (done) {
+    runSequence("build", "watch", done);
 });
