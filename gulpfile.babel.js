@@ -1,7 +1,7 @@
 /* globals require */
 "use strict";
 
-var autoprefixer = require("gulp-autoprefixer"),
+const autoprefixer = require("gulp-autoprefixer"),
     babel = require("gulp-babel"),
     browserSync = require("browser-sync").create(),
     bump = require("gulp-bump"),
@@ -19,22 +19,22 @@ var autoprefixer = require("gulp-autoprefixer"),
     uglify = require("gulp-uglify"),
     zip = require("gulp-zip");
 
-gulp.task("clean", function () {
+gulp.task("clean", () => {
     return gulp.src("dist").pipe(clean());
 });
 
-gulp.task("update", function () {
+gulp.task("update", () => {
     return gulp.src("bower_components/jquery/dist/jquery.js").pipe(gulp.dest("src/js/vendor/"));
 });
 
-gulp.task("copy", function () {
+gulp.task("copy", () => {
     gulp.src("src/fonts/**/**").pipe(gulp.dest("dist/fonts/"));
     gulp.src("src/images/**/**").pipe(gulp.dest("dist/images/"));
     gulp.src("src/js/**/**").pipe(gulp.dest("dist/js/"));
     return gulp.src("src/**/**.html").pipe(gulp.dest("dist/"));
 });
 
-gulp.task("sass", function () {
+gulp.task("sass", () => {
     return gulp.src("src/scss/style.scss")
         .pipe(sass({
             includePaths: "bower_components/foundation-sites/scss",
@@ -48,7 +48,7 @@ gulp.task("sass", function () {
         .pipe(gulp.dest("dist/css"));
 });
 
-gulp.task("transpile", function () {
+gulp.task("transpile", () => {
     return gulp.src(["dist/js/**.js", "!dist/js/vendor/**.js"])
         .pipe(babel({
             compact: false,
@@ -57,7 +57,7 @@ gulp.task("transpile", function () {
         .pipe(gulp.dest("dist/js/"));
 });
 
-gulp.task("cssmin", function () {
+gulp.task("cssmin", () => {
     return gulp.src("dist/css/**/**.css")
         .pipe(cssmin({
             advanced: true,
@@ -69,7 +69,7 @@ gulp.task("cssmin", function () {
         .pipe(gulp.dest("dist/css/"));
 });
 
-gulp.task("jsmin", function () {
+gulp.task("jsmin", () => {
     return gulp.src("dist/js/**/**.js")
         .pipe(uglify({
             mangle: true,
@@ -83,20 +83,20 @@ gulp.task("jsmin", function () {
         .pipe(gulp.dest("dist/js/"));
 });
 
-gulp.task("bump", function () {
+gulp.task("bump", () => {
     return gulp.src("package.json").pipe(bump({ type: "minor" })).pipe(gulp.dest("./"));
 });
 
-gulp.task("patch", function () {
+gulp.task("patch", () => {
     return gulp.src("package.json").pipe(bump({ type: "patch" })).pipe(gulp.dest("./"));
 });
 
-gulp.task("archive", function () {
+gulp.task("archive", () => {
     var timestamp = new Date().toJSON().slice(0, -5).replace(/:|T/g, "-");
     return gulp.src("dist/**/**").pipe(zip(npmPackage.name + ".[" + timestamp + "].zip")).pipe(gulp.dest("."));
 });
 
-gulp.task("watch", function () {
+gulp.task("watch", () => {
     browserSync.init({
         browser: "google chrome canary",
         server: {
@@ -106,14 +106,14 @@ gulp.task("watch", function () {
     gulp.watch(["src/**/**.html", "src/fonts/**/**", "src/images/**/**", "src/js/**/*.js"], ["copy", browserSync.reload]);
 });
 
-gulp.task("build", function (done) {
+gulp.task("build", (done) => {
     runSequence("clean", "sass", "copy", done);
 });
 
-gulp.task("release", function () {
+gulp.task("release", () => {
     runSequence("clean", "sass", "copy", "transpile", "cssmin", "jsmin", "archive");
 });
 
-gulp.task("default", function (done) {
+gulp.task("default", (done) => {
     runSequence("build", "watch", done);
 });
